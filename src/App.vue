@@ -6,7 +6,7 @@ import Guitarra from './components/Guitarra.vue'
 const guitarras = ref([])
 
 const agregarCarrito = () =>{
-    console.log("Agregando")
+    console.log(guitarra)
 }
 
 onMounted(()=>{
