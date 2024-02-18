@@ -12,7 +12,7 @@ const props = defineProps({
 
 })
 
-defineEmits(['decrementar-cantidad','incrementar-cantidad','agregar-carrito','eliminar-producto'])
+defineEmits(['decrementar-cantidad','incrementar-cantidad','agregar-carrito','eliminar-producto','borrar-carrito'])
 
 const totalpagar=computed(()=>{
     return  props.carrito.reduce((total,producto)=> total + (producto.cantidad * producto.precio),0)
@@ -86,7 +86,7 @@ const totalpagar=computed(()=>{
                             </table>
 
                             <p class="text-end">Total pagar: <span class="fw-bold">${{ totalpagar }}</span></p>
-                            <button class="btn btn-dark w-100 mt-3 p-2">Vaciar Carrito</button>
+                            <button @click="$emit('borrar-carrito')" class="btn btn-dark w-100 mt-3 p-2">Vaciar Carrito</button>
 
                         </div>
                         </div>
